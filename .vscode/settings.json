@@ -1,0 +1,8 @@
+{
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": { "path": "bash", "args": ["-lc", "source ~/isaac_env.sh; exec bash -l"] }
+  },
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+  "ros.distro": "humble"
+}
