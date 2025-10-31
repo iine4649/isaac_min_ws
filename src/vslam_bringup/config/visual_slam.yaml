@@ -1,7 +1,9 @@
 visual_slam:
   ros__parameters:
     use_sim_time: false
-    enable_rectified_pose: false
+    enable_rectified_pose: true
+    enable_slam_visualization: false
+    denoise_input_images: false
     enable_debug: false
     odometry_frame: odom
     base_frame: base_link

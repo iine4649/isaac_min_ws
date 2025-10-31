@@ -1,11 +1,14 @@
 realsense2_camera:
   ros__parameters:
-    align_depth: true
+    align_depth:
+      enable: true
     enable_color: true
     enable_depth: true
-    enable_gyro: false
-    enable_accel: false
-    unite_imu_method: ""
+    enable_gyro: true
+    enable_accel: true
+    unite_imu_method: 2
+    publish_odom_tf: false
+    enable_sync: true
     depth_module.profile: 640x480x30
     rgb_camera.profile: 640x480x30
 
