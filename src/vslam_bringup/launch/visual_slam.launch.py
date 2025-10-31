@@ -15,9 +15,17 @@ def generate_launch_description():
 
     vslam = Node(
         package='isaac_ros_visual_slam',
-        executable='visual_slam',
+        executable='visual_slam_node',
         name='visual_slam',
         output='screen',
+        remappings=[
+            ('stereo_camera/left/image', '/realsense2_camera/infra1/image_raw'),
+            ('stereo_camera/right/image', '/realsense2_camera/infra2/image_raw'),
+            ('stereo_camera/left/camera_info', '/realsense2_camera/infra1/camera_info'),
+            ('stereo_camera/right/camera_info', '/realsense2_camera/infra2/camera_info'),
+            ('imu', '/realsense2_camera/imu'),
+            ('visual_slam/tracking/pose', '/visual_slam/tracking/pose'),
+        ],
         parameters=[ParameterFile(cfg_file, allow_substs=True)]
     )
 
