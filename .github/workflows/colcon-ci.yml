@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up ROS 2 CI (Humble)
+        uses: ros-tooling/action-ros-ci@v0.4
+        with:
+          target-ros2-distro: humble
+          package-name: perception_vslam
+          # Isaac ROS や RealSense 関連は apt に無いので rosdep 解決をスキップ
+          rosdep-skip-keys: |
+            isaac_ros_visual_slam
+            isaac_ros_common
+            isaac_ros_nitros
+            realsense2_camera
+            negotiated
+          # 依存ソースの取得は行わず、当該パッケージのみをビルド/テスト
+          skip-testing: false
+          colcon-defaults: |
+            {
+              "test": {
+                "pytest-args": ["-m", "not copyright"]
+              }
+            }
+
+

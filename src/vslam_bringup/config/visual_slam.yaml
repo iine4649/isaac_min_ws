@@ -1,0 +1,10 @@
+visual_slam:
+  ros__parameters:
+    use_sim_time: false
+    enable_rectified_pose: false
+    enable_debug: false
+    odometry_frame: odom
+    base_frame: base_link
+    map_frame: map
+
+

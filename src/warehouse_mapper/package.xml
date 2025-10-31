@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>warehouse_mapper</name>
+  <version>0.1.0</version>
+  <description>Depth + VSLAM-based warehouse map builder</description>
+
+  <maintainer email="xkura@example.com">Shunski Honjonov</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2_ros</depend>
+  <depend>geometry_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>open3d</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

@@ -1,0 +1,6 @@
+warehouse_mapper:
+  ros__parameters:
+    load_map: false
+    map_path: ""
+
+
